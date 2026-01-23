@@ -1,0 +1,1 @@
+from .ippo_ff_rice import build_trainer

@@ -1,0 +1,53 @@
+wandb: True
+wandb_project: cleanup_test
+wandb_group: mappo
+seed: 42
+env_name: clean_up
+skip_training: False
+env_settings:
+  num_agents: 7
+  num_inner_steps: 1000
+  shared_rewards: False
+  
+algorithm: MAPPO
+trainer_settings:
+  num_log_episodes_after_training: 1
+  num_envs: 10
+  total_timesteps: 100000000
+  trainer_seed: 42
+  debug: False
+  skip_training: False
+
+  learning_rate: 0.01
+  anneal_lr: True
+  gamma: 1
+  gae_lambda: 0.95
+  max_grad_norm: 0.5
+  clip_coef: 0.2
+  clip_coef_vf: 1  # Depends on the reward scaling !
+  ent_coef_start: 0.01
+  ent_coef_end: 0.001
+  # ent_coef: float = 0.1
+  vf_coef: 0.5
+
+  num_steps: 100  # steps per environment
+  num_minibatches: 4  # Number of mini-batches
+  update_epochs: 4  # K epochs to update the policy
+
+  a2c_mode: False
+  backend: gpu
+#   actor
+# network_settings:
+#   shared_weights: False
+#   actor:
+#     name: ActorNetworkMultiDiscrete
+#     settings:
+#       p1:
+#       p2:
+#   critic:
+#     name: CriticNetwork
+#     settings:
+#       p1:
+#       p2:
+      
+    

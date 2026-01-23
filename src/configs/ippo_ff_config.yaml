@@ -1,0 +1,56 @@
+wandb: False
+wandb_project: jice 
+seed: 42
+env_name: rice
+env_settings:
+  num_regions: 7
+  train_env: True
+  diff_reward_mode: True
+  relative_reward_mode: False
+  disable_trading: False
+  temperature_calibration: base
+  negotiation_on: False
+  action_window_size: 1
+  
+algorithm: IPPO
+trainer_settings:
+  backend: gpu
+  num_log_episodes_after_training: 2
+  num_envs: 10
+  total_timesteps: 1000000
+  trainer_seed: 42
+  debug: False
+  skip_training: False
+
+  learning_rate: 2.5e-4
+  anneal_lr: True
+  gamma: 0.99
+  gae_lambda: 0.95
+  max_grad_norm: 1.0
+  clip_coef: 0.2
+  clip_coef_vf: 0.5  # Depends on the reward scaling !
+  ent_coef_start: 2.0
+  ent_coef_end: 0.01
+  # ent_coef: float = 0.1
+  vf_coef: 0.5
+
+  num_steps: 100  # steps per environment
+  num_minibatches: 4  # Number of mini-batches
+  update_epochs: 4  # K epochs to update the policy
+
+  a2c_mode: False
+#   actor
+# network_settings:
+#   shared_weights: False
+#   actor:
+#     name: ActorNetworkMultiDiscrete
+#     settings:
+#       p1:
+#       p2:
+#   critic:
+#     name: CriticNetwork
+#     settings:
+#       p1:
+#       p2:
+      
+    

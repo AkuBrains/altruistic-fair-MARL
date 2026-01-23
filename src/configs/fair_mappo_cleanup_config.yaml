@@ -1,0 +1,59 @@
+wandb: True
+wandb_project: cleanup_new_2
+wandb_group: fair_mappo_fair
+seed: 42
+env_name: clean_up
+skip_training: False
+env_settings:
+  num_agents: 7
+  num_inner_steps: 500
+  shared_rewards: False
+  
+algorithm: FAIR_MAPPO
+trainer_settings:
+  num_log_episodes_after_training: 2
+  num_envs: 5
+  total_timesteps: 400000000
+  trainer_seed: 42
+  debug: False
+  skip_training: False
+
+  learning_rate: 0.0001
+  anneal_lr: True
+  gamma: 0.99
+  gae_lambda: 0.95
+  max_grad_norm: 0.5
+  clip_coef: 0.5
+  clip_coef_vf: 0.5  # Depends on the reward scaling !
+  ent_coef_start: 0.01
+  ent_coef_end: 0
+  norm_grad: False
+  # ent_coef: float = 0.1
+  vf_coef: 1
+
+  num_steps: 500  # steps per environment
+  num_minibatches: 4  # Number of mini-batches
+  update_epochs: 2  # K epochs to update the policy
+
+  a2c_mode: False
+  backend: gpu
+  alpha:
+  - 0.5
+  - 0.7
+  - 0
+  fair: True
+#   actor
+# network_settings:
+#   shared_weights: False
+#   actor:
+#     name: ActorNetworkMultiDiscrete
+#     settings:
+#       p1:
+#       p2:
+#   critic:
+#     name: CriticNetwork
+#     settings:
+#       p1:
+#       p2:
+      
+    

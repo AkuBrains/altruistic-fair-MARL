@@ -1,0 +1,19 @@
+TrainerParams:
+  learning_rate: 2.5e-4
+    anneal_lr: True
+    gamma: 0.99
+    gae_lambda: 0.95
+    max_grad_norm: 1.0
+    clip_coef: 0.2
+    clip_coef_vf: 0.5  # Depends on the reward scaling !
+    ent_coef_start: 2.0
+    ent_coef_end: 0.01
+    # ent_coef: 0.1
+    vf_coef: 0.5
+
+    num_steps: 100  # steps per environment
+    num_minibatches: 4  # Number of mini-batches
+    update_epochs: 4  # K epochs to update the policy
+
+    a2c_mode: False
+

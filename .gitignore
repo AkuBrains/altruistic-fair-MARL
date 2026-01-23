@@ -1,0 +1,10 @@
+saved_models/
+*_gif/
+wandb/
+
+*.eqx
+__pycache__
+*.vscode
+*.csv
+*.png
+*.gif
