@@ -1,10 +1,11 @@
 saved_models/
 *_gif/
 wandb/
+.idea/
 
 *.eqx
 __pycache__
 *.vscode
 *.csv
 *.png
-*.gif
+
