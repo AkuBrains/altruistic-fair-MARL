@@ -12,7 +12,6 @@ from jax_smi import initialise_tracking
 
 initialise_tracking()
 
-os.environ["WANDB_API_KEY"] = "1b96a66c1a8852d21339ec0b5fe23015adc1c32b"
 # os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"]="false"
 os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"]="0.75"
 
